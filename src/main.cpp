@@ -1,5 +1,6 @@
 #include <Geode/Geode.hpp>
 #include <Geode/Utils.hpp>
+#include <chrono>
 
 using namespace geode::prelude;
 
@@ -9,7 +10,7 @@ using namespace geode::prelude;
 CCLabelBMFont* counter = nullptr;
 Mod* mod = nullptr;
 
-DWORD previousUpdate = 0;
+std::chrono::steady_clock::time_point previousUpdate = std::chrono::steady_clock::now();
 
 std::string getFont(int index) {
 	if (index <= 1)
@@ -89,8 +90,8 @@ class $modify(CCScheduler) {
 			return;
 		}
 
-		if (GetTickCount() - previousUpdate < 500) return;
-		previousUpdate = GetTickCount();
+		if (std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::steady_clock::now() - previousUpdate).count() < 500) return;
+		previousUpdate = std::chrono::steady_clock::now();
 
 		float fps = 1.f / dt;
 		int intFps = static_cast<int>(fps);
