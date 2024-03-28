@@ -33,6 +33,7 @@ jobs:
         uses: geode-sdk/build-geode-mod@v1
         with:
           combine: true
+          build-config: RelWithDebInfo
           target: ${{ matrix.config.target }}
 
   package:
