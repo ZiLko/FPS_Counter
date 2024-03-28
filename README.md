@@ -1,6 +1,6 @@
 # FPS Counter
 
-Add a fully <cl>customizable FPS Counter</c> to your game.
+Geometry dash mod that lets you add a fully <cl>customizable FPS Counter</c>.
 
 # You can control:
 
