@@ -28,7 +28,6 @@ class $modify(PlayLayer) {
 	bool init(GJGameLevel * level, bool useReplay, bool dontCreateObjects) {
 		if (!PlayLayer::init(level, useReplay, dontCreateObjects)) return false;
 
-		delete counter;
 		if (!mod->getSettingValue<bool>("enabled")) return true;
 
 		counter = CCLabelBMFont::create((std::string("0") + (mod->getSettingValue<bool>("no_text") ? "" : " FPS")).c_str(), getFont(mod->getSettingValue<int64_t>("font") - 1).c_str());
@@ -84,7 +83,6 @@ class $modify(CCScheduler) {
 
 		if (!counter || !PlayLayer::get()) {
 			if (counter) {
-				delete counter;
 				counter = nullptr;
 			}
 			return;
