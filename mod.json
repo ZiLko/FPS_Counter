@@ -91,5 +91,11 @@
 	"id": "zilko.fps_counter",
 	"name": "FPS Counter",
 	"developer": "Zilko",
-	"description": "Add a customizable FPS Counter to your screen!"
+	"description": "Add a customizable FPS Counter to your screen!",
+	"tags": [
+		"Utility",
+		"Gameplay",
+		"Enhancement"
+	],
+	"repository": "https://github.com/ZiLko/FPS_Counter"
 }
